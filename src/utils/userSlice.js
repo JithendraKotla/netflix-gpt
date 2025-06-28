@@ -1,5 +1,3 @@
-// src/utils/userSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
@@ -9,12 +7,12 @@ const userSlice = createSlice({
     addUser: (state, action) => {
       return action.payload;
     },
-    removeUser: () => {
+    removeUser: (state, action) => {
       return null;
     },
   },
 });
 
-// ✅ Correct named exports
 export const { addUser, removeUser } = userSlice.actions;
-export const userReducer = userSlice.reducer;
+
+export default userSlice.reducer;
